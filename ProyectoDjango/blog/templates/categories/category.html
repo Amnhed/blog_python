@@ -4,7 +4,9 @@
 
 {% block content %}
     <h1 class="title">{{category.name}}</h1>
+    <p>{{category.description}}</p>
+    <!--category.articles.all llama a la reclacion del modelo que se llama related_name="articles"-->
     
-    {% include 'articles/articles.html' %}
+    {% include 'articles/articles.html' with articles=category.articles.all %}
 
 {% endblock %}
