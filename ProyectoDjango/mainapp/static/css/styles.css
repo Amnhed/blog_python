@@ -167,6 +167,45 @@ nav > ul > li:hover > ul > li:hover a{
     margin: 0 auto;
 }
 
+.box .image{
+    width: 45%;
+    float: left;
+    margin-right: 40px;
+}
+
+.box .image img{
+    width: 100%;
+}
+
+.box a{
+    transition: all 100ms;
+    color: #444;
+}
+
+.box a:hover{
+    color: #2ba977;
+}
+
+
+.box form{
+    width: 40%;
+}
+
+.box form input,
+.box form label {
+    display: block;
+    padding: 5px;
+    padding-left: 0px;
+}
+
+.box form input[type="text"],
+.box form textarea
+.box form select{
+    width: 100%;
+    margin-bottom: 10px;
+}
+    
+
 .title{
     color: #444;
     letter-spacing: 1px;
