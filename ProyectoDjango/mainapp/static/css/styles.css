@@ -186,7 +186,6 @@ nav > ul > li:hover > ul > li:hover a{
     color: #2ba977;
 }
 
-
 .box form{
     width: 40%;
 }
@@ -199,12 +198,33 @@ nav > ul > li:hover > ul > li:hover a{
 }
 
 .box form input[type="text"],
+.box form input[type="email"],
+.box form input[type="password"],
 .box form textarea
 .box form select{
     width: 100%;
     margin-bottom: 10px;
 }
-    
+
+.rojo{
+    color: red;
+}
+
+.message,
+.alert-success{
+    padding: 20px;
+    background: #1f7e58;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.box form input[type="submit"]:hover,
+.box form input[type="button"]:hover,
+.box form button:hover{
+    cursor: pointer;
+    background: #1f7e58;
+}
 
 .title{
     color: #444;
