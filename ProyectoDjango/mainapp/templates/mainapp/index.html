@@ -14,4 +14,13 @@
         {% endfor %}
     {% endif %}
 
+    {% if user.email %}
+        <h2>Bienvenido, {{request.user.first_name}} {{request.user.last_name}} </h2>
+        <p>
+            {{user.email}}
+        </p>
+    {% else %}
+        <h2>Necesitas iniciar sesion</h2>
+    {% endif %}
+
 {% endblock %}
