@@ -28,6 +28,16 @@
                 <li>
                     <a href="{% url 'index' %}">Sesion activa</a>
                 </li>
+                <li>
+                    <a href="{% url 'logout' %}">Cerrar sesion</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'login' %}">Login</a>
+                </li>
+                <li>
+                    <a href="{% url 'register' %}">Registro</a>
+                </li>                
             {% endif %}
             <li>
                 <a href="{% url 'index' %}">Inicio</a>
@@ -46,15 +56,7 @@
                 <li>
                     <a href="{% url 'page' page.2 %}">{{page.1}}</a>
                 </li>
-            {% endfor %}
-            <li>
-                <a href="{% url 'register' %}">Registro</a>
-            </li>
-            <li>
-                <a href="{% url 'login' %}">Login</a>
-            </li>
-
-    
+            {% endfor %}    
         </ul>
     </nav>
 

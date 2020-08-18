@@ -13,23 +13,26 @@ def about(request):
     return render(request,'mainapp/about.html',{'title':'Sobre Nosotros'})
 
 def register_page(request):
+    #mostrar la pantalla de registro solo si el usario no tiene sesion iniciada
+    if request.user.is_authenticated:
+        return redirect('index')
+    else:
+        register_form = RegisterForm()
 
-    register_form = RegisterForm()
+        if request.method == 'POST':
+            register_form = UserCreationForm(request.POST)
 
-    if request.method == 'POST':
-        register_form = UserCreationForm(request.POST)
+            if register_form.is_valid():
+                register_form.save()
+                messages.success(request,'Usario creado correctamente')
 
-        if register_form.is_valid():
-            register_form.save()
-            messages.success(request,'Usario creado correctamente')
+                #va el nombre que asigne en view
+                return redirect('index')
 
-            #va el nombre que asigne en view
-            return redirect('index')
-
-    return render(request,'users/register.html',{
-        'title': 'Registro',
-        'register_form': register_form
-    })
+        return render(request,'users/register.html',{
+            'title': 'Registro',
+            'register_form': register_form
+        })
 
 def login_page(request):
     if request.method == 'POST':
@@ -49,3 +52,7 @@ def login_page(request):
     return render(request, 'users/login.html',{
         'title': 'Login'
     })
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
